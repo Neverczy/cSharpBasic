@@ -1,3 +1,7 @@
 <Solution>
+  <Project Path="array/array.csproj" />
+  <Project Path="arrayTest/arrayTest.csproj" />
   <Project Path="enum/enum.csproj" />
+  <Project Path="enum_test/enum_test.csproj" />
+  <Project Path="mulArrayTest/mulArrayTest.csproj" />
 </Solution>
