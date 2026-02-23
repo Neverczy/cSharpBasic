@@ -140,44 +140,70 @@ class Program
 
         #region 5.给m*n行列的二维数组,值0,1,要求含有1的行和列全部转为1
         Random r = new Random();
-        int[,] ma5 = new int[r.Next(5, 11), r.Next(5, 11)];
+        int row = r.Next(5, 11);
+        int col = r.Next(5, 11);
+        int[,] ma5 = new int[row, col];
+        bool[] rowFlag = new bool[row];
+        bool[] colFlag = new bool[col];
+        System.Console.WriteLine("---------Before Operation-----------");
         for (int i = 0; i < ma5.GetLength(0); i++)
         {
             for (int j = 0; j < ma5.GetLength(1); j++)
             {
                 ma5[i, j] = r.Next(0, 10);
                 ma5[i, j] = ma5[i, j] > 1 ? 0 : ma5[i, j];
+                if (ma5[i,j] == 1)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
                 System.Console.Write($"{ma5[i, j]}\t");
+                Console.ForegroundColor = ConsoleColor.White;
             }
             System.Console.WriteLine();
         }
-        //operation
+        //ma5 = new int[5,5]{ { 1, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0 } };
+        //  operation
         for (int i = 0; i < ma5.GetLength(0); i++)
         {
             for (int j = 0; j < ma5.GetLength(1); j++)
             {
                 if (ma5[i, j] == 1)
                 {
-                    int ii = i;
-                    int ij = j;
-                    for (int fj = 0; fj < ma5.GetLength(1); fj++)
-                    {
-                        ma5[ii, fj] = 2;
-                    }
-                    for (int fi = 0; fi < ma5.GetLength(0); fi++)
-                    {
-                        ma5[fi, ij] = 2;
-                    }
+                    rowFlag[i] = true;
+                    colFlag[j] = true;
+                }
+            }
+        }
+        for (int i = 0; i < ma5.GetLength(0); i++)
+        {
+            for(int j = 0;j < ma5.GetLength(1); j++)
+            {
+                if (rowFlag[i] || colFlag[j])
+                {
+                    ma5[i, j] = 1;
                 }
             }
         }
         //print
-        System.Console.WriteLine("--------------------");
+        System.Console.WriteLine("---------After Operation-----------");
         for (int i = 0; i < ma5.GetLength(0); i++)
         {
             for (int j = 0; j < ma5.GetLength(1); j++)
             {
+                if (ma5[i, j] == 1)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
                 System.Console.Write($"{ma5[i, j]}\t");
+                Console.ForegroundColor = ConsoleColor.White;
             }
             System.Console.WriteLine();
         }

@@ -1,7 +1,13 @@
 <Solution>
   <Project Path="array/array.csproj" />
   <Project Path="arrayTest/arrayTest.csproj" />
+  <Project Path="babooSort/babooSort.csproj" Id="0837706b-c922-410c-a509-b0e051922d66" />
   <Project Path="enum/enum.csproj" />
   <Project Path="enum_test/enum_test.csproj" />
+  <Project Path="flyChess/flyChess.csproj" Id="7cad0d2e-128e-4957-9eab-7654831ef758" />
+  <Project Path="function/function.csproj" Id="ce0f473b-00e8-40cd-8da9-32709e06a340" />
+  <Project Path="jaggedArray/jaggedArray.csproj" Id="043c94ce-7588-4bc1-b0ba-b35f4fc7ae89" />
   <Project Path="mulArrayTest/mulArrayTest.csproj" />
+  <Project Path="selectSort/selectSort.csproj" Id="919b6f07-709c-4e3f-ae64-95b14fcd8e56" />
+  <Project Path="structTest/structTest.csproj" Id="92c8cb3b-7acc-4557-874d-cfb9018c4057" />
 </Solution>
